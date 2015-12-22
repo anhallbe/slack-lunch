@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Slack /lunch Test Page</title>
+  </head>
+  <body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+      //TODO: When adding a new path
+      var textCommands = [
+        'uppereast'
+      ];
+
+      for (var t in textCommands) {
+        var text = textCommands[t];
+        $.getJSON('/lunch?text=' + text, function(result) {
+          console.log(result);
+          var beautified = result.text.replace(/(?:\r\n|\r|\n)/g, '<br/>');
+          $('body').append('<div class="' + text + '"></div>');
+          $('.' + text).append('<h1>' + text +'</h1>')
+          $('.' + text).append(beautified)
+        })
+      }
+    </script>
+  </body>
+</html>

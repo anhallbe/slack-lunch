@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "serve": "./node_modules/gulp/bin/gulp.js browser-sync",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,6 +24,9 @@
     "request": "^2.67.0"
   },
   "devDependencies": {
+    "browser-sync": "^2.10.1",
+    "gulp": "^3.9.0",
+    "gulp-nodemon": "^2.0.4",
     "tern-node-express": "^0.3.0"
   }
 }
