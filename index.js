@@ -15,7 +15,6 @@ app.get('/', function(req, res) {
 })
 
 app.get('/lunch', function(req, res) {
-  console.log(req.query);
   if (!req.query.token == TOKEN && !DEV) {
     console.warn('Invalid token in request');
     res.sendStatus(403);
