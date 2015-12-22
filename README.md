@@ -8,7 +8,7 @@ Ask slack what's for /lunch:
   git clone git@github.com:anhallbe/slack-lunch.git
   cd slack-lunch/
   npm install
-  npm serve
+  npm run serve
   [hack hack hack]
 ```
 
