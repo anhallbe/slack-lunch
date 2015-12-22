@@ -13,7 +13,7 @@ const WEEKDAYS = {
   5: 'FREDAG'
 }
 
-module.exports = function(req, res) {
+module.exports = function(cb) {
   let today = new Date();
   let weekday = WEEKDAYS[today.getDay()];
   request(UPPEREAST_URL, (err, resp, html) => {
@@ -41,8 +41,7 @@ module.exports = function(req, res) {
       result[weekday].forEach(r => {
         output += r + '\n';
       })
-      console.log(output);
-      res.send({text:output});
+      cb(output);
     }
   });
 }
