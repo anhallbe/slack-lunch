@@ -4,6 +4,7 @@ var express = require('express');
 var path = require('path');
 
 var upperEast = require('./handlers/uppereast');
+var kenths = require('./handlers/kenths');
 
 var app = express();
 
@@ -25,6 +26,11 @@ app.get('/lunch', function(req, res) {
   switch (text) {
     case 'uppereast':
       upperEast(function(result) {
+        res.send({text:result});
+      });
+      break;
+    case 'kenths':
+      kenths(function(result) {
         res.send({text:result});
       });
       break;

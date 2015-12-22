@@ -9,12 +9,18 @@
     <script>
       //TODO: When adding a new path
       var textCommands = [
-        'uppereast'
+        'uppereast',
+        'kenths'
       ];
 
       for (var t in textCommands) {
         var text = textCommands[t];
+        getResult(text);
+      }
+
+      function getResult(text) {
         $.getJSON('/lunch?text=' + text, function(result) {
+          var restaurant = '' + text;
           console.log(result);
           var beautified = result.text.replace(/(?:\r\n|\r|\n)/g, '<br/>');
           $('body').append('<div class="' + text + '"></div>');
